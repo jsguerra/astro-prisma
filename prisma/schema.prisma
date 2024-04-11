@@ -33,6 +33,7 @@ model Person {
   child         Person[]  @relation("PersonParent")
   spouse        Person[]  @relation("Spouse")
   partner       Person[]  @relation("Spouse")
+  biography     String?
   reference     String?
 }
 
@@ -40,6 +41,6 @@ model Gender {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
+  sex       String
   Person    Person[]
 }
