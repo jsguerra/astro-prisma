@@ -1,5 +1,7 @@
 ---
+import prisma from "@util/prisma";
 
+const persons = await prisma.person.findMany();
 ---
 
 <html lang="en">
@@ -12,5 +14,6 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		{persons.map((person) => `${person.firstName} ${person.lastName}`)}
 	</body>
 </html>
