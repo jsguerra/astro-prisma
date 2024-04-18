@@ -41,6 +41,6 @@ model Gender {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  sex       String
+  sex       String   @default("unknown")
   Person    Person[]
 }
